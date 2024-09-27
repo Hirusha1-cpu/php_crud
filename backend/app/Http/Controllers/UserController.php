@@ -11,6 +11,8 @@ class UserController extends Controller
     //here create all crud logic
     public function loadAllUsers(){
         $all_users = User::all();
+
+        return $all_users;
         return view('users',compact('all_users'));
     }
 

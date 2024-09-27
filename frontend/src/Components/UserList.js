@@ -5,7 +5,7 @@ const UserList = () => {
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
-        axios.get('http://172.16.26.236:8000/users')
+        axios.get('/users')
             .then(response => {
                 console.log(response);
                 
@@ -21,7 +21,11 @@ const UserList = () => {
             <h1>User List</h1>
             <ul>
                 {users.map(user => (
-                    <li key={user.id}>{user.name}</li>
+                    <>
+                        <li key={user.id}>{user.name}</li>
+                        <li key={user.id}>{user.email}</li>
+                        <li key={user.id}>{user.phone_number}</li>
+                    </>
                 ))}
             </ul>
         </div>
